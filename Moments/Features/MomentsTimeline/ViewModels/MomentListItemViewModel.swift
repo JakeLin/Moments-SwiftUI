@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MomentListItemViewModel: ListItemViewModel, Identifiable {    
+final class MomentListItemViewModel: ListItemViewModel, Identifiable, ObservableObject {
     let id: UUID = .init()
     let userAvatarURL: URL?
     let userName: String
@@ -15,7 +15,7 @@ struct MomentListItemViewModel: ListItemViewModel, Identifiable {
     let photoURL: URL? // This version only supports one image
     let postDateDescription: String?
     let isLiked: Bool
-    let likes: [URL]
+    @Published private(set) var likes: [URL]
 
     private let momentID: String
     private let momentsRepo: MomentsRepo
@@ -45,11 +45,15 @@ struct MomentListItemViewModel: ListItemViewModel, Identifiable {
         }
     }
 
-    func like(from userID: String) async throws -> MomentsDetails {
-        return try await momentsRepo.updateLike(isLiked: true, momentID: momentID, fromUserID: userID)
+    @MainActor
+    func like(from userID: String) async throws {
+        let momentsDetails = try await momentsRepo.updateLike(isLiked: true, momentID: momentID, fromUserID: userID)
+        likes = momentsDetails.moments.first { $0.id == momentID }?.likes.compactMap { URL(string: $0.avatar) } ?? []
     }
 
-    func unlike(from userID: String) async throws -> MomentsDetails {
-        return try await momentsRepo.updateLike(isLiked: false, momentID: momentID, fromUserID: userID)
+    @MainActor
+    func unlike(from userID: String) async throws {
+        let momentsDetails = try await momentsRepo.updateLike(isLiked: false, momentID: momentID, fromUserID: userID)
+        likes = momentsDetails.moments.first { $0.id == momentID }?.likes.compactMap { URL(string: $0.avatar) } ?? []
     }
 }

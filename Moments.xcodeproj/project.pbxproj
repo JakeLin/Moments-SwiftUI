@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE944FFE26AFF26400FA632D /* APINetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE944FFD26AFF26400FA632D /* APINetworkingError.swift */; };
 		AE94500026AFF38B00FA632D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE944FFF26AFF38B00FA632D /* APIService.swift */; };
+		AE94500226AFF85100FA632D /* MomentLikeUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94500126AFF85100FA632D /* MomentLikeUpdater.swift */; };
 		AED2132D26AD486A0061D9DA /* MomentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2132C26AD486A0061D9DA /* MomentsApp.swift */; };
 		AED2133126AD486C0061D9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2133026AD486C0061D9DA /* Assets.xcassets */; };
 		AED2133426AD486C0061D9DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2133326AD486C0061D9DA /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		AE944FFD26AFF26400FA632D /* APINetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkingError.swift; sourceTree = "<group>"; };
 		AE944FFF26AFF38B00FA632D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AE94500126AFF85100FA632D /* MomentLikeUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentLikeUpdater.swift; sourceTree = "<group>"; };
 		AED2132926AD486A0061D9DA /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED2132C26AD486A0061D9DA /* MomentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsApp.swift; sourceTree = "<group>"; };
 		AED2133026AD486C0061D9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				AE944FFD26AFF26400FA632D /* APINetworkingError.swift */,
 				AE944FFF26AFF38B00FA632D /* APIService.swift */,
+				AE94500126AFF85100FA632D /* MomentLikeUpdater.swift */,
 				AED2134226AE40410061D9DA /* MomentsByUserIDFetcher.swift */,
 			);
 			path = Networking;
@@ -280,6 +283,7 @@
 				AED2135B26AE40410061D9DA /* UserProfileListItemView.swift in Sources */,
 				AED2135D26AE40410061D9DA /* MomentsListItemView.swift in Sources */,
 				AED2132D26AD486A0061D9DA /* MomentsApp.swift in Sources */,
+				AE94500226AFF85100FA632D /* MomentLikeUpdater.swift in Sources */,
 				AED2135626AE40410061D9DA /* MomentListItemViewModel.swift in Sources */,
 				AED2135A26AE40410061D9DA /* MomentListItemView.swift in Sources */,
 				AED2135826AE40410061D9DA /* MomentsRepo.swift in Sources */,

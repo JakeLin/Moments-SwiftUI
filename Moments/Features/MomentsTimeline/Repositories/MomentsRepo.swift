@@ -14,15 +14,19 @@ protocol MomentsRepoType {
 
 final actor MomentsRepo: MomentsRepoType {
     private let momentsByUserIDFetcher: MomentsByUserIDFetcherType
+    private let momentLikeUpdater: MomentLikeUpdaterType
 
     static let shared: MomentsRepo = {
         return MomentsRepo(
-            momentsByUserIDFetcher: MomentsByUserIDFetcher()
+            momentsByUserIDFetcher: MomentsByUserIDFetcher(),
+            momentLikeUpdater: MomentLikeUpdater()
         )
     }()
 
-    init(momentsByUserIDFetcher: MomentsByUserIDFetcherType) {
+    init(momentsByUserIDFetcher: MomentsByUserIDFetcherType,
+         momentLikeUpdater: MomentLikeUpdaterType) {
         self.momentsByUserIDFetcher = momentsByUserIDFetcher
+        self.momentLikeUpdater = momentLikeUpdater
     }
 
     func getMoments(userID: String) async throws -> MomentsDetails {
@@ -30,6 +34,6 @@ final actor MomentsRepo: MomentsRepoType {
     }
 
     func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) async throws -> MomentsDetails {
-        fatalError()
+        return try await momentLikeUpdater.updateLike(isLiked, momentID: momentID, fromUserID: userID)
     }
 }

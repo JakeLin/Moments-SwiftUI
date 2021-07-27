@@ -51,7 +51,7 @@ private struct LikeToggleStyle: ToggleStyle {
 }
 
 struct MomentListItemView: View {
-    let viewModel: MomentListItemViewModel
+    @ObservedObject private var viewModel: MomentListItemViewModel
     @EnvironmentObject var userDataStore: UserDataStore
 
     @State private var isLiked: Bool
@@ -144,16 +144,16 @@ struct MomentListItemView: View {
             }
             .toggleStyle(LikeToggleStyle())
             .padding(.trailing, 18)
-//            .onChange(of: isLiked, perform: { isOn in
-//                guard isLiked == isOn else { return }
-//                Task(priority: .background) {
-//                    if isOn {
-//                        await viewModel.like(from: userDataStore.currentUser.id)
-//                    } else {
-//                        await viewModel.unlike(from: userDataStore.currentUser.id)
-//                    }
-//                }
-//            })
+            .onChange(of: isLiked, perform: { isOn in
+                guard isLiked == isOn else { return }
+                Task {
+                    if isOn {
+                        try? await viewModel.like(from: userDataStore.currentUser.id)
+                    } else {
+                        try? await viewModel.unlike(from: userDataStore.currentUser.id)
+                    }
+                }
+            })
         }
         .frame(maxWidth:.infinity)
         .padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
