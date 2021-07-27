@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE944FFE26AFF26400FA632D /* APINetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE944FFD26AFF26400FA632D /* APINetworkingError.swift */; };
+		AE94500026AFF38B00FA632D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE944FFF26AFF38B00FA632D /* APIService.swift */; };
 		AED2132D26AD486A0061D9DA /* MomentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2132C26AD486A0061D9DA /* MomentsApp.swift */; };
 		AED2133126AD486C0061D9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2133026AD486C0061D9DA /* Assets.xcassets */; };
 		AED2133426AD486C0061D9DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2133326AD486C0061D9DA /* Preview Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE944FFD26AFF26400FA632D /* APINetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkingError.swift; sourceTree = "<group>"; };
+		AE944FFF26AFF38B00FA632D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AED2132926AD486A0061D9DA /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED2132C26AD486A0061D9DA /* MomentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsApp.swift; sourceTree = "<group>"; };
 		AED2133026AD486C0061D9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		AED2134126AE40410061D9DA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AE944FFD26AFF26400FA632D /* APINetworkingError.swift */,
+				AE944FFF26AFF38B00FA632D /* APIService.swift */,
 				AED2134226AE40410061D9DA /* MomentsByUserIDFetcher.swift */,
 			);
 			path = Networking;
@@ -264,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE94500026AFF38B00FA632D /* APIService.swift in Sources */,
 				AED2135726AE40410061D9DA /* MomentsByUserIDFetcher.swift in Sources */,
 				AED2135E26AE40410061D9DA /* RelativeDateTimeFormatterType.swift in Sources */,
 				AED2135C26AE40410061D9DA /* MomentsTimelineView.swift in Sources */,
@@ -279,6 +286,7 @@
 				AED2135926AE40410061D9DA /* MomentsDetails.swift in Sources */,
 				AED2135526AE40410061D9DA /* ListItemViewModel.swift in Sources */,
 				AED2135426AE40410061D9DA /* MomentsTimelineViewModel.swift in Sources */,
+				AE944FFE26AFF26400FA632D /* APINetworkingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

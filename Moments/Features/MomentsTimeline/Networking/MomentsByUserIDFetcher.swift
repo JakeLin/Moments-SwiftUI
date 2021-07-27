@@ -7,60 +7,21 @@
 
 import Foundation
 
-enum APINetworkingError: Error {
-    case invalidURL
-    case invalidParameter
-    case networkURLError
-    case networkStatusError(Int)
-    case invalidResponseJSON
-    case noData
-}
-
 protocol MomentsByUserIDFetcherType {
     func fetchMoments(userID: String) async throws -> MomentsDetails
 }
 
-struct MomentsByUserIDFetcher: MomentsByUserIDFetcherType {
-    private struct Response: Decodable {
-        let data: Data
-
-        struct Data: Decodable {
-            let getMomentsDetailsByUserID: MomentsDetails
-        }
-    }
-
+struct MomentsByUserIDFetcher: MomentsByUserIDFetcherType, APIService {
     func fetchMoments(userID: String) async throws -> MomentsDetails {
-        guard let url = API.baseURL else { throw APINetworkingError.invalidURL }
+        struct Response: Decodable {
+            let data: Data
 
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let variables: [AnyHashable: Encodable] = ["userID": userID]
-        let parameters: [String: Any] = ["query": query,
-                      "variables": variables]
-        guard let requestBody = try? JSONSerialization.data(withJSONObject: parameters) else { throw APINetworkingError.invalidParameter }
-        request.httpBody = requestBody
-
-        let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APINetworkingError.networkURLError
-        }
-        guard (200..<300).contains(httpResponse.statusCode) else {
-            throw APINetworkingError.networkStatusError(httpResponse.statusCode)
+            struct Data: Decodable {
+                let getMomentsDetailsByUserID: MomentsDetails
+            }
         }
 
-        guard let responseJSON = try? JSONDecoder().decode(Response.self, from: data) else {
-            throw APINetworkingError.invalidResponseJSON
-        }
-
-        return responseJSON.data.getMomentsDetailsByUserID
-    }
-}
-
-private extension MomentsByUserIDFetcher {
-    var query: String {
-        return """
+        let query = """
            query getMomentsDetailsByUserID($userID: ID!) {
              getMomentsDetailsByUserID(userID: $userID) {
                userDetails {
@@ -88,5 +49,11 @@ private extension MomentsByUserIDFetcher {
              }
            }
         """
+
+        let variables: [AnyHashable: Encodable] = ["userID": userID]
+        let parameters: [String: Any] = ["query": query, "variables": variables]
+
+        let response = try await request(variables: variables, parameters: parameters, forType: Response.self)
+        return response.data.getMomentsDetailsByUserID
     }
 }
