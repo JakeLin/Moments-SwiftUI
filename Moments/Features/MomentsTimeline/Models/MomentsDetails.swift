@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct MomentsDetails: Codable {
+struct MomentsDetails: Decodable {
     let userDetails: UserDetails
     let moments: [Moment]
 
-    struct UserDetails: Codable {
+    struct UserDetails: Decodable {
         let id: String
         let name: String
         let avatar: String
         let backgroundImage: String
     }
 
-    struct Moment: Codable {
+    struct Moment: Decodable {
         let id: String
         let userDetails: MomentUserDetails
         let type: MomentType
@@ -29,17 +29,17 @@ struct MomentsDetails: Codable {
         let isLiked: Bool
         let likes: [LikedUserDetails]
 
-        struct MomentUserDetails: Codable {
+        struct MomentUserDetails: Decodable {
             let name: String
             let avatar: String
         }
 
-        struct LikedUserDetails: Codable {
+        struct LikedUserDetails: Decodable {
             let id: String
             let avatar: String
         }
 
-        enum MomentType: String, Codable {
+        enum MomentType: String, Decodable {
             case url = "URL"
             case photos = "PHOTOS"
         }
