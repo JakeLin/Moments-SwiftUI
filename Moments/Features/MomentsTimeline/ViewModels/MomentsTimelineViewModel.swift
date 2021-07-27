@@ -8,7 +8,7 @@
 import Foundation
 
 final class MomentsTimelineViewModel: ObservableObject {
-    @Published var listItems: [ListItemViewModel] = []
+    @Published private(set) var listItems: [ListItemViewModel] = []
 
     private let momentsRepo: MomentsRepoType
 
@@ -16,6 +16,7 @@ final class MomentsTimelineViewModel: ObservableObject {
         self.momentsRepo = momentsRepo
     }
 
+    @MainActor
     func loadItems(userID: String) async throws {
         let momentsDetails = try await momentsRepo.getMoments(userID: userID)
         listItems = [UserProfileListItemViewModel(userDetails: momentsDetails.userDetails)]

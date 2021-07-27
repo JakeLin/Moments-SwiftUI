@@ -16,7 +16,7 @@ struct MomentsTimelineView: View {
         ScrollView(axes, showsIndicators: true) {
             LazyVStack {
                 ForEach (viewModel.listItems, id: \.id) { item in
-                    MomentsListItemView(viewModel: item, isDragging: $isDragging).ignoresSafeArea(.all)
+                    MomentsListItemView(viewModel: item, isDragging: $isDragging)
                 }
             }
         }

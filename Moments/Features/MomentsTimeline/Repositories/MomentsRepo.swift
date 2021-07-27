@@ -12,7 +12,7 @@ protocol MomentsRepoType {
     func updateLike(isLiked: Bool, momentID: String, fromUserID userID: String) async throws -> MomentsDetails
 }
 
-struct MomentsRepo: MomentsRepoType {
+final actor MomentsRepo: MomentsRepoType {
     private let momentsByUserIDFetcher: MomentsByUserIDFetcherType
 
     static let shared: MomentsRepo = {
