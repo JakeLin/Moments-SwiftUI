@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-private struct IdentifiableURL: Identifiable {
-    let id: UUID = .init()
-    let url: URL
-}
-
 private struct LikeToggleBackground<S: Shape>: View {
     var isHighlighted: Bool
     var shape: S
@@ -115,8 +110,8 @@ struct MomentListItemView: View {
                         HStack {
                             Image(systemName: "heart")
                                 .foregroundColor(.secondary)
-                            ForEach(likes.map { IdentifiableURL(url: $0) }) {
-                                AsyncImage(url: $0.url) { phase in
+                            ForEach(likes, id: \.absoluteURL) {
+                                AsyncImage(url: $0) { phase in
                                     if let image = phase.image {
                                         image.resizable()
                                     } else if phase.error != nil {

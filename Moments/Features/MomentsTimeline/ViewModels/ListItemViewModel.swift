@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListItemViewModel {
-    var id: UUID { get }
+    var id: String { get }
 }

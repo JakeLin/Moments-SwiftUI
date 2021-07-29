@@ -8,7 +8,6 @@
 import Foundation
 
 final class MomentListItemViewModel: ListItemViewModel, Identifiable, ObservableObject {
-    let id: UUID = .init()
     let userAvatarURL: URL?
     let userName: String
     let title: String?
@@ -16,6 +15,10 @@ final class MomentListItemViewModel: ListItemViewModel, Identifiable, Observable
     let postDateDescription: String?
     let isLiked: Bool
     @Published private(set) var likes: [URL]
+
+    var id: String {
+        return "moment-\(momentID)"
+    }
 
     private let momentID: String
     private let momentsRepo: MomentsRepo
