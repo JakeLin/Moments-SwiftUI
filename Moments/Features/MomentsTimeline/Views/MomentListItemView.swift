@@ -133,9 +133,10 @@ struct MomentListItemView: View {
             }
 
             Toggle(isOn: $isLiked) {
-                Image(systemName: "heart.fill")
-                    .foregroundColor(isLiked == true ? Color("likeButtonSelected") : Color("likeButtonNotSelected"))
-                    .animation(.easeIn, value: true)
+                withAnimation(.easeIn) {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(isLiked == true ? Color("likeButtonSelected") : Color("likeButtonNotSelected"))
+                }
             }
             .toggleStyle(LikeToggleStyle())
             .padding(.trailing, 18)
