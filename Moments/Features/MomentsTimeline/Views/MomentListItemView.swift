@@ -47,7 +47,7 @@ private struct LikeToggleStyle: ToggleStyle {
 
 struct MomentListItemView: View {
     @ObservedObject private var viewModel: MomentListItemViewModel
-    @EnvironmentObject var userDataStore: UserDataStore
+    @EnvironmentObject private var userDataStore: UserDataStore
 
     @State private var isLiked: Bool
 
@@ -72,7 +72,7 @@ struct MomentListItemView: View {
                 }
                 .clipShape(Circle())
                 .frame(width: 44, height: 44)
-                .shadow(color: Color.primary.opacity(0.15), radius: 5, x: 0, y: 2)
+                .shadow(color: .primary.opacity(0.15), radius: 5, x: 0, y: 2)
                 .padding(.leading, 18)
 
                 VStack(alignment: .leading) {
@@ -83,7 +83,7 @@ struct MomentListItemView: View {
                     if let title = viewModel.title {
                         Text(title)
                             .font(.body)
-                            .foregroundColor(Color.secondary)
+                            .foregroundColor(.secondary)
                     }
 
                     if let photoURL = viewModel.photoURL {
@@ -151,8 +151,8 @@ struct MomentListItemView: View {
                 }
             })
         }
-        .frame(maxWidth:.infinity)
-        .padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 18)
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .shadow(color: Color.black.opacity(0.15), radius: 20, x: 0, y: 20)

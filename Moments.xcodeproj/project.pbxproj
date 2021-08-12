@@ -111,11 +111,11 @@
 		AED2133B26AE40410061D9DA /* MomentsTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				AED2133C26AE40410061D9DA /* ViewModels */,
-				AED2134126AE40410061D9DA /* Networking */,
-				AED2134326AE40410061D9DA /* Repositories */,
-				AED2134526AE40410061D9DA /* Models */,
 				AED2134726AE40410061D9DA /* Views */,
+				AED2133C26AE40410061D9DA /* ViewModels */,
+				AED2134326AE40410061D9DA /* Repositories */,
+				AED2134126AE40410061D9DA /* Networking */,
+				AED2134526AE40410061D9DA /* Models */,
 			);
 			path = MomentsTimeline;
 			sourceTree = "<group>";
@@ -123,10 +123,10 @@
 		AED2133C26AE40410061D9DA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AED2133F26AE40410061D9DA /* ListItemViewModel.swift */,
-				AED2134026AE40410061D9DA /* MomentListItemViewModel.swift */,
 				AED2133E26AE40410061D9DA /* MomentsTimelineViewModel.swift */,
+				AED2133F26AE40410061D9DA /* ListItemViewModel.swift */,
 				AED2133D26AE40410061D9DA /* UserProfileListItemViewModel.swift */,
+				AED2134026AE40410061D9DA /* MomentListItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -134,10 +134,8 @@
 		AED2134126AE40410061D9DA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				AE944FFD26AFF26400FA632D /* APINetworkingError.swift */,
-				AE944FFF26AFF38B00FA632D /* APIService.swift */,
-				AE94500126AFF85100FA632D /* MomentLikeUpdater.swift */,
 				AED2134226AE40410061D9DA /* MomentsByUserIDFetcher.swift */,
+				AE94500126AFF85100FA632D /* MomentLikeUpdater.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -161,10 +159,10 @@
 		AED2134726AE40410061D9DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AED2134826AE40410061D9DA /* MomentListItemView.swift */,
-				AED2134B26AE40410061D9DA /* MomentsListItemView.swift */,
 				AED2134A26AE40410061D9DA /* MomentsTimelineView.swift */,
+				AED2134B26AE40410061D9DA /* MomentsListItemView.swift */,
 				AED2134926AE40410061D9DA /* UserProfileListItemView.swift */,
+				AED2134826AE40410061D9DA /* MomentListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +188,8 @@
 		AED2134F26AE40410061D9DA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AE944FFD26AFF26400FA632D /* APINetworkingError.swift */,
+				AE944FFF26AFF38B00FA632D /* APIService.swift */,
 				AED2135026AE40410061D9DA /* API.swift */,
 			);
 			path = Networking;

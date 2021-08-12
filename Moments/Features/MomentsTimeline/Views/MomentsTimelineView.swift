@@ -14,13 +14,13 @@ struct MomentsTimelineView: View {
 
     var body: some View {
         ScrollView(axes, showsIndicators: true) {
-            LazyVStack {
+            LazyVStack(spacing: 20) {
                 ForEach (viewModel.listItems, id: \.id) { item in
                     MomentsListItemView(viewModel: item, isDragging: $isDragging)
                 }
             }
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
         .ignoresSafeArea(.all)
         .task {

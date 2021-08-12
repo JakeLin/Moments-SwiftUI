@@ -15,7 +15,7 @@ struct User: UserType {
     let id: String
 }
 
-final class UserDataStore: ObservableObject {
+final actor UserDataStore: ObservableObject {
     // Hardcode the user id to 0
     @Published var currentUser: UserType = User(id: "0")
 }

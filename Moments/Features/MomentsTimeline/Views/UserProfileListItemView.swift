@@ -73,7 +73,6 @@ struct UserProfileListItemView: View {
         .rotation3DEffect(Angle(degrees: 5), axis: (x: viewSize.width, y: viewSize.height, z: 0))
         .gesture(
             DragGesture(minimumDistance: 0).onChanged({ value in
-                // Seems there is bug: `onChanged` will be called after `onEnded`, will fix later
                 self.isDragging = true
                 self.viewSize = value.translation
             }).onEnded({ _ in
