@@ -53,9 +53,8 @@ struct MomentLikeUpdater: MomentLikeUpdaterType, APIService {
         let variables: [AnyHashable: Encodable] = ["momentID": momentID,
                                                    "userID": userID,
                                                    "isLiked": isLiked]
-        let parameters: [String: Any] = ["query": query, "variables": variables]
 
-        let response = try await request(variables: variables, parameters: parameters, forType: Response.self)
+        let response = try await request(variables: variables, query: query, forType: Response.self)
         return response.data.updateMomentLike
     }
 }

@@ -51,9 +51,7 @@ struct MomentsByUserIDFetcher: MomentsByUserIDFetcherType, APIService {
         """
 
         let variables: [AnyHashable: Encodable] = ["userID": userID]
-        let parameters: [String: Any] = ["query": query, "variables": variables]
-
-        let response = try await request(variables: variables, parameters: parameters, forType: Response.self)
+        let response = try await request(variables: variables, query: query, forType: Response.self)
         return response.data.getMomentsDetailsByUserID
     }
 }

@@ -10,12 +10,14 @@ import Foundation
 protocol APIService { }
 
 extension APIService {
-    func request<T: Decodable>(variables: [AnyHashable: Encodable], parameters: [String: Any], forType type: T.Type) async throws -> T {
+    func request<T: Decodable>(variables: [AnyHashable: Encodable], query: String, forType type: T.Type) async throws -> T {
         guard let url = API.baseURL else { throw APINetworkingError.invalidURL }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let parameters: [String: Any] = ["query": query, "variables": variables]
 
         guard let requestBody = try? JSONSerialization.data(withJSONObject: parameters) else { throw APINetworkingError.invalidParameter }
         request.httpBody = requestBody
