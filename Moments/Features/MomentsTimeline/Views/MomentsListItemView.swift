@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MomentsListItemView: View {
-    let viewModel: ListItemViewModel
+    let viewModel: ListItemViewModelType
     @Binding var isDragging: Bool
 
     var body: some View {

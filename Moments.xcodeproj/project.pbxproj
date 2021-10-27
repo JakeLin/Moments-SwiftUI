@@ -15,7 +15,7 @@
 		AED2133426AD486C0061D9DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED2133326AD486C0061D9DA /* Preview Assets.xcassets */; };
 		AED2135326AE40410061D9DA /* UserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2133D26AE40410061D9DA /* UserProfileListItemViewModel.swift */; };
 		AED2135426AE40410061D9DA /* MomentsTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2133E26AE40410061D9DA /* MomentsTimelineViewModel.swift */; };
-		AED2135526AE40410061D9DA /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2133F26AE40410061D9DA /* ListItemViewModel.swift */; };
+		AED2135526AE40410061D9DA /* ListItemViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2133F26AE40410061D9DA /* ListItemViewModelType.swift */; };
 		AED2135626AE40410061D9DA /* MomentListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2134026AE40410061D9DA /* MomentListItemViewModel.swift */; };
 		AED2135726AE40410061D9DA /* MomentsByUserIDFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2134226AE40410061D9DA /* MomentsByUserIDFetcher.swift */; };
 		AED2135826AE40410061D9DA /* MomentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED2134426AE40410061D9DA /* MomentsRepo.swift */; };
@@ -39,7 +39,7 @@
 		AED2133326AD486C0061D9DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AED2133D26AE40410061D9DA /* UserProfileListItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileListItemViewModel.swift; sourceTree = "<group>"; };
 		AED2133E26AE40410061D9DA /* MomentsTimelineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsTimelineViewModel.swift; sourceTree = "<group>"; };
-		AED2133F26AE40410061D9DA /* ListItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
+		AED2133F26AE40410061D9DA /* ListItemViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemViewModelType.swift; sourceTree = "<group>"; };
 		AED2134026AE40410061D9DA /* MomentListItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentListItemViewModel.swift; sourceTree = "<group>"; };
 		AED2134226AE40410061D9DA /* MomentsByUserIDFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsByUserIDFetcher.swift; sourceTree = "<group>"; };
 		AED2134426AE40410061D9DA /* MomentsRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsRepo.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				AED2133E26AE40410061D9DA /* MomentsTimelineViewModel.swift */,
-				AED2133F26AE40410061D9DA /* ListItemViewModel.swift */,
+				AED2133F26AE40410061D9DA /* ListItemViewModelType.swift */,
 				AED2133D26AE40410061D9DA /* UserProfileListItemViewModel.swift */,
 				AED2134026AE40410061D9DA /* MomentListItemViewModel.swift */,
 			);
@@ -288,7 +288,7 @@
 				AED2135A26AE40410061D9DA /* MomentListItemView.swift in Sources */,
 				AED2135826AE40410061D9DA /* MomentsRepo.swift in Sources */,
 				AED2135926AE40410061D9DA /* MomentsDetails.swift in Sources */,
-				AED2135526AE40410061D9DA /* ListItemViewModel.swift in Sources */,
+				AED2135526AE40410061D9DA /* ListItemViewModelType.swift in Sources */,
 				AED2135426AE40410061D9DA /* MomentsTimelineViewModel.swift in Sources */,
 				AE944FFE26AFF26400FA632D /* APINetworkingError.swift in Sources */,
 			);

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ListItemViewModel {
+protocol ListItemViewModelType {
     var id: String { get }
 }

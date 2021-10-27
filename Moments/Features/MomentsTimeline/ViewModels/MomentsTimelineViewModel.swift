@@ -8,7 +8,7 @@
 import Foundation
 
 final class MomentsTimelineViewModel: ObservableObject {
-    @Published private(set) var listItems: [ListItemViewModel] = []
+    @Published private(set) var listItems: [ListItemViewModelType] = []
 
     private let momentsRepo: MomentsRepoType
 

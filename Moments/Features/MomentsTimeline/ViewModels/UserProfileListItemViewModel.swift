@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserProfileListItemViewModel: ListItemViewModel, Identifiable {
+struct UserProfileListItemViewModel: ListItemViewModelType, Identifiable {
     let name: String
     let avatarURL: URL?
     let backgroundImageURL: URL?

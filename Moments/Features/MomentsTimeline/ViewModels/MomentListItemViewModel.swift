@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MomentListItemViewModel: ListItemViewModel, Identifiable, ObservableObject {
+final class MomentListItemViewModel: ListItemViewModelType, Identifiable, ObservableObject {
     let userAvatarURL: URL?
     let userName: String
     let title: String?
